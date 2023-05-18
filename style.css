@@ -1,0 +1,139 @@
+* {
+  font-family: Futura;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.animate-fadein {
+  -webkit-animation: fadein 500ms ease forwards;
+  animation: fadein 500ms ease forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+/*
+*
+* header styles
+*
+*/
+
+.instructions {
+  font-size: large;
+  font-style: italic;
+}
+
+/*
+*
+* button styles
+*
+*/
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.spirit-button {
+  padding: 20px;
+
+  border: 2px solid black;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+  background-color: transparent;
+  cursor: pointer;
+
+  font-size: x-large;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background: white;
+  background: linear-gradient(to left, white 50%, black 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+}
+
+.spirit-button:last-of-type {
+  border-bottom: 2px solid black;
+}
+
+.spirit-button:hover {
+  background-position: left;
+  color: white;
+}
+
+.spirit-button:active {
+  background-position: left;
+  color: white;
+}
+
+/*
+*
+* drinks styles
+*
+*/
+
+.drinks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.drinks-container-description {
+  width: 100%;
+  text-align: center;
+}
+
+.drink-card {
+  display: block;
+  overflow: hidden;
+  width: max-content;
+
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.drink-card-image {
+  width: 200px;
+  height: 200px;
+}
+
+.drink-card-title {
+  padding: 5px;
+  text-transform: uppercase;
+  width: 190px;
+}
+
+@media (max-width: 430px) {
+  .drink-card-image {
+    height: 150px;
+    width: 150px;
+  }
+
+  .drink-card-title {
+    width: 140px;
+  }
+}

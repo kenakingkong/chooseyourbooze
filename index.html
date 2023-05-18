@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CHOOSE YOUR BOOZE</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 data-splitting class="headline headline--jump">CHOOSE YOUR BOOZE</h1>
+      <center>
+        <p class="instructions">GET A LIST OF DRINKS BY SPIRIT</p>
+      </center>
+    </header>
+
+    <main class="main-container">
+      <!-- buttons -->
+      <button id="vodka" class="spirit-button">Vodka</button>
+      <button id="tequila" class="spirit-button">Tequila</button>
+      <button id="gin" class="spirit-button">Gin</button>
+      <button id="rum" class="spirit-button">Rum</button>
+      <button id="whiskey" class="spirit-button">Whiskey</button>
+      <button id="bourbon" class="spirit-button">Bourbon</button>
+      <button id="brandy" class="spirit-button">Brandy</button>
+
+      <div id="drinks" class="drinks-container hidden"></div>
+    </main>
+
+    <script src="script.js"></script>
+    <!-- add gsap -->
+  </body>
+</html>
