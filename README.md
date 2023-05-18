@@ -6,3 +6,4 @@
 - [ ] Turn into PWA
 - [ ] Cache api requests
 - [ ] Fix animations
+- [ ] Add share tags
