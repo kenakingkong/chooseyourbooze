@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content="Choose your booze - get a list of drinks by spirit.">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+
     <title>CHOOSE YOUR BOOZE</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="title" content="CHOOSE YOUR BOOZE">
+    <meta name="description" content="Choose your booze - get a list of drinks by spirit." />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kenakingkong.github.io/chooseyourbooze">
+    <meta property="og:title" content="CHOOSE YOUR BOOZE">
+    <meta property="og:description" content="Choose your booze - get a list of drinks by spirit.">
+    <meta property="og:image" content="https://kenakingkong.github.io/images/share-photo.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kenakingkong.github.io/chooseyourbooze">
+    <meta property="twitter:title" content="CHOOSE YOUR BOOZE">
+    <meta property="twitter:description" content="Choose your booze - get a list of drinks by spirit.">
+    <meta property="twitter:image" content="https://kenakingkong.github.io/images/share-photo.jpg">
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <link rel="apple-touch-icon" href="images/16x16.png" />
+    <link rel="apple-touch-icon" href="images/32x32.png" />
+    <link rel="apple-touch-icon" href="images/72x72.png" />
+    <link rel="apple-touch-icon" href="images/96x96.png" />
+    <link rel="apple-touch-icon" href="images/128x128.png" />
+    <link rel="apple-touch-icon" href="images/144x144.png" />
+    <link rel="apple-touch-icon" href="images/152x152.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
     <header>
-      <h1 data-splitting class="headline headline--jump">CHOOSE YOUR BOOZE</h1>
       <center>
+        <img src="images/wine.png" alt="empty wine glass" class="animated-header-image"/>
+        <h1 class="animated-header">
+          <span>C</span>
+          <span>H</span>
+          <span>O</span>
+          <span>O</span>
+          <span>S</span>
+          <span>E</span>
+          <span>Y</span>
+          <span>O</span>
+          <span>U</span>
+          <span>R</span>
+          <span>B</span>
+          <span>O</span>
+          <span>O</span>
+          <span>Z</span>
+          <span>E</span>
+        </h1>
         <p class="instructions">GET A LIST OF DRINKS BY SPIRIT</p>
       </center>
     </header>
@@ -29,7 +75,6 @@
       <div id="drinks" class="drinks-container hidden"></div>
     </main>
 
-    <script src="script.js"></script>
-    <!-- add gsap -->
+    <script src="js/app.js"></script>
   </body>
 </html>

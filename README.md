@@ -2,8 +2,8 @@
 
 - [x] Design
 - [x] Build MVP
-- [ ] Generate Icons
-- [ ] Turn into PWA
-- [ ] Cache api requests
+- [x] Generate Icons
+- [x] Turn into PWA
+- [x] Cache api requests
 - [ ] Fix animations
-- [ ] Add share tags
+- [x] Add share tags
