@@ -23,17 +23,21 @@ a {
   text-decoration: none;
 }
 
-.animate-fadein {
-  -webkit-animation: fadein 500ms ease forwards;
-  animation: fadein 500ms ease forwards;
-}
-
 @keyframes fadein {
   from {
     opacity: 0;
   }
   to {
     opacity: 100;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -51,18 +55,18 @@ a {
 .animated-header > span {
   display: inline-block;
   font-family: Futura;
-  font-size: -webkit-calc(100% + 30px);
-  font-size: -calc(100% + 30px);
+  font-size: -webkit-calc(100% + 20px);
+  font-size: -calc(100% + 20px);
   font-weight: bold;
   line-height: 75%;
   letter-spacing: 2%;
 }
 
 .animated-header-image {
-  height: -webkit-calc(2% + 100px);
-  height: -calc(2% + 100px);
-  width: -webkit-calc(2% + 100px);
-  width: -calc(2% + 100px);
+  height: -webkit-calc(2% + 80px);
+  height: -calc(2% + 80px);
+  width: -webkit-calc(2% + 80px);
+  width: -calc(2% + 80px);
   animation: wobble 2.5s infinite ease;
   margin-top: 10px;
 }
@@ -103,8 +107,6 @@ a {
 }
 
 .spirit-button {
-  padding: 20px;
-
   border: 2px solid black;
   border-left: transparent;
   border-right: transparent;
@@ -119,11 +121,12 @@ a {
   background: white;
   background: linear-gradient(to left, white 50%, black 50%) right;
   background-size: 200%;
-  transition: 0.5s ease-out;
-}
 
-.spirit-button:last-of-type {
-  border-bottom: 2px solid black;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 .spirit-button:hover {
@@ -134,6 +137,11 @@ a {
 .spirit-button:active {
   background-position: left;
   color: white;
+}
+
+.spirit-button-hidden {
+  height: 0px !important;
+  border: transparent !important;
 }
 
 /*
@@ -147,7 +155,6 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .drinks-container-description {
@@ -167,6 +174,13 @@ a {
 .drink-card-image {
   width: 200px;
   height: 200px;
+
+  border-bottom: 1px solid black;
+
+  -webkit-animation: fadein 500ms ease forwards;
+  -moz-animation: fadein 500ms ease forwards;
+  -o-animation: fadein 500ms ease forwards;
+  animation: fadein 500ms ease forwards;
 }
 
 .drink-card-title {

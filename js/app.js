@@ -1,8 +1,19 @@
 let currentSpirit = "";
-let babyCache = {}
+let babyCache = {};
 
 const drinkButtons = document.getElementsByClassName("spirit-button");
 const drinksContainer = document.getElementById("drinks");
+
+const fixButtonHeights = () => {
+  const header = document.querySelector("header");
+  const viewport = window.visualViewport;
+  const buttonHeight =
+    (viewport.height - header.offsetHeight) / drinkButtons.length;
+    
+  for (el of drinkButtons) {
+    el.style.height = `${buttonHeight}px`;
+  }
+};
 
 const toggleClass = (el, className) => {
   if (el.classList.contains(className)) el.classList.remove(className);
@@ -14,7 +25,6 @@ const createImgEl = (drink) => {
   imgEl.src = drink.strDrinkThumb + "/preview";
   imgEl.alt = drink.strDrink + " preview";
   imgEl.classList.add("drink-card-image");
-  imgEl.classList.add("animate-fadein");
   return imgEl;
 };
 
@@ -47,7 +57,7 @@ const createDrinkCard = (drink) => {
 
 const renderDrinksDescription = (totalDrinks) => {
   const el = document.createElement("p");
-  const text = document.createTextNode(`SHOWING ${totalDrinks} DRINKS`);
+  const text = document.createTextNode(`SHOWING ${totalDrinks} ${currentSpirit.toLocaleUpperCase()} DRINKS`);
   el.appendChild(text);
   el.classList.add("drinks-container-description");
   return el;
@@ -56,8 +66,8 @@ const renderDrinksDescription = (totalDrinks) => {
 const renderDrinks = (drinks) => {
   toggleClass(drinksContainer, "hidden");
 
-  let descriptionEl = renderDrinksDescription(drinks.length)
-  drinksContainer.append(descriptionEl)
+  let descriptionEl = renderDrinksDescription(drinks.length);
+  drinksContainer.append(descriptionEl);
 
   drinks.forEach((drink) => {
     const drinkCard = createDrinkCard(drink);
@@ -73,7 +83,7 @@ const clearDrinks = () => {
 const showActiveButton = (buttonId) => {
   for (const el of drinkButtons) {
     if (el.id !== buttonId) {
-      toggleClass(el, "hidden");
+      toggleClass(el, "spirit-button-hidden");
     }
   }
 };
@@ -85,7 +95,7 @@ const handleClick = async (event) => {
     if (currentSpirit === event.target.id) {
       showActiveButton(currentSpirit);
       clearDrinks();
-      currentSpirit = ""
+      currentSpirit = "";
       return;
     }
 
@@ -96,11 +106,11 @@ const handleClick = async (event) => {
       showActiveButton(currentSpirit);
       clearDrinks();
       renderDrinks(babyCache[currentSpirit]);
-      return
+      return;
     }
 
     try {
-      const response = await fetch(apiEndpoint)
+      const response = await fetch(apiEndpoint);
       const jsonData = await response.json();
 
       showActiveButton(currentSpirit);
@@ -116,11 +126,17 @@ const handleClick = async (event) => {
 
 document.addEventListener("click", handleClick);
 
+window.visualViewport.addEventListener("resize", function () {
+  fixButtonHeights();
+});
+
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", function () {
     navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err))
-  })
+      .register("../serviceWorker.js")
+      .then((res) => console.log("service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
+  });
 }
+
+fixButtonHeights();

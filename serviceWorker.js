@@ -1,10 +1,11 @@
 const staticChooseYourBooze = "choose-your-booze-v1"
+
 const assets = [
   "/",
   "/index.html",
   "/css/style.css",
   "/js/app.js",
-  "/images/wing.png",
+  "/images/wine.png",
 ]
 
 self.addEventListener("install", installEvent => {
